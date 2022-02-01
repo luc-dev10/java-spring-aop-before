@@ -14,4 +14,9 @@ public class LoggingAspect {
         System.out.println("Is Service running.");
     }
 
+    @Before("execution(public void com.aop.service.AccountService.saveAccount(com.aop.entity.Account))")
+    public void addBeforeAddingAccount() {
+        System.out.println("Saving your account sir.");
+    }
+
 }
