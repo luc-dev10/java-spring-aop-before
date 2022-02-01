@@ -36,7 +36,7 @@ public class AppController {
         membership.setType(Membership.MEMBERSHIP_TYPE.FREE);
         System.out.println(membership.getId());
         // AOP
-        System.out.println(accountService.isServiceRunning());
+        System.out.println(membershipService.isServiceRunning());
 
         // print account
 

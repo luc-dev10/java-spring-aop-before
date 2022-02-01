@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 public class LoggingAspect {
 
     // add advice
-    @Before("execution(public boolean isServiceRunning())")
+    @Before("execution(public boolean com.aop.service.MembershipService.isServiceRunning())")
     public void addBeforeAccountAdvice() {
         System.out.println("Is Service running.");
     }
