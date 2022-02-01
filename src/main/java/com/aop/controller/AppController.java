@@ -27,11 +27,13 @@ public class AppController {
 
         // save account
         accountService.saveAccount(account);
-        
+
+        // get account
+        account = accountService.getAccount(1);
+
         // create membership
         Membership membership = new Membership();
         membership.setType(Membership.MEMBERSHIP_TYPE.FREE);
-        System.out.println(membership.getId());
         // AOP
         System.out.println(membershipService.isServiceRunning());
 
