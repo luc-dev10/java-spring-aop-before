@@ -15,8 +15,10 @@ public class AppController {
         // read configuration
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfiguration.class);
 
-        AccountService accountService = context.getBean("accountService", AccountService.class);
-        MembershipService membershipService = context.getBean("membershipService", MembershipService.class);
+        AccountService accountService = context.getBean("accountService",
+                AccountService.class);
+        MembershipService membershipService = context.getBean("membershipService",
+                MembershipService.class);
 
         // call business method
         Account account = new Account();
@@ -28,16 +30,13 @@ public class AppController {
         // save account
         accountService.saveAccount(account);
 
-        // get account
-        account = accountService.getAccount(1);
-
         // create membership
         Membership membership = new Membership();
         membership.setType(Membership.MEMBERSHIP_TYPE.FREE);
+        membershipService.saveMembership(membership);
+
         // AOP
         System.out.println(membershipService.isServiceRunning());
-
-        // print account
 
         // close
         context.close();
